@@ -43,5 +43,5 @@ Este projeto foi construído do zero utilizando tecnologias web fundamentais, se
 
 Desenvolvido por **Matheus Milan**. Entre em contato!
 
-![LinkedIn](https://www.linkedin.com/in/matheus-milan-61b16b125/)
-![GitHub](https://github.com/coragemCHO)
+[LinkedIn](https://www.linkedin.com/in/matheus-milan-61b16b125/)
+[GitHub](https://github.com/coragemCHO)
