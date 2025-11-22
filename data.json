@@ -1,0 +1,478 @@
+[
+  {
+    "nome": "QIIME 2",
+    "descricao": "QIIME 2 é uma plataforma de bioinformática para análise de microbiomas. É amplamente utilizada para análises de diversidade, classificação taxonômica e visualização de dados, integrando diversas ferramentas através de um sistema de plugins.",
+    "ano_versao_relevante": 2016,
+    "link": "https://github.com/qiime2/qiime2",
+    "categorias": [
+      "Análise de amplicon (16S/ITS)",
+      "Classificação taxonômica",
+      "Visualização de dados"
+    ]
+  },
+  {
+    "nome": "Mothur",
+    "descricao": "Mothur é um software de código aberto e expansível que atende às necessidades de bioinformática da comunidade de ecologia microbiana, especialmente para análise de sequências do gene 16S rRNA.",
+    "ano_versao_relevante": 2009,
+    "link": "https://github.com/mothur/mothur",
+    "categorias": [
+      "Análise de amplicon (16S/ITS)",
+      "Classificação taxonômica"
+    ]
+  },
+  {
+    "nome": "Kraken2",
+    "descricao": "Kraken2 é um classificador taxonômico que atribui rótulos a sequências de DNA com base em k-mers. É conhecido por sua alta velocidade e precisão. Frequentemente, é usado com o Bracken (https://github.com/jenniferlu717/Bracken), que estima a abundância em nível de espécie de forma mais precisa, reatribuindo leituras classificadas em níveis taxonômicos mais altos.",
+    "ano_versao_relevante": 2018,
+    "link": "https://github.com/DerrickWood/kraken2",
+    "categorias": [
+      "Classificação taxonômica",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "MetaPhlAn",
+    "descricao": "MetaPhlAn é uma ferramenta para traçar o perfil da composição de comunidades microbianas a partir de dados de sequenciamento shotgun. Utiliza um banco de dados de genes marcadores específicos de clados para identificação taxonômica em nível de espécie. Faz parte do ecossistema biobakery, sendo frequentemente usado em conjunto com o HUMAnN.",
+    "ano_versao_relevante": 2012,
+    "link": "https://github.com/biobakery/MetaPhlAn",
+    "categorias": [
+      "Classificação taxonômica",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "HUMAnN",
+    "descricao": "HUMAnN (HMP Unified Metabolic Analysis Network) é um pipeline para perfilar a presença, ausência e abundância de vias metabólicas e outras funções moleculares de uma comunidade microbiana a partir de dados de metagenômica ou metatranscriptômica. Faz parte do ecossistema biobakery.",
+    "ano_versao_relevante": 2012,
+    "link": "https://github.com/biobakery/humann",
+    "categorias": [
+      "Análise funcional",
+      "Metagenômica",
+      "Metatranscriptômica"
+    ]
+  },
+  {
+    "nome": "MEGAHIT",
+    "descricao": "MEGAHIT é um montador de genomas de nó único, ultrarrápido e com uso eficiente de memória, otimizado para metagenomas grandes e complexos. Ele utiliza grafos de De Bruijn para reconstruir contigs a partir de leituras curtas.",
+    "ano_versao_relevante": 2015,
+    "link": "https://github.com/voutcn/megahit",
+    "categorias": [
+      "Montagem de genomas",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "CheckM",
+    "descricao": "CheckM avalia a qualidade de genomas recuperados de isolados, células únicas ou metagenomas. Ele estima a completude e a contaminação com base na presença de genes marcadores de cópia única. É do mesmo grupo de pesquisa que desenvolveu o GTDB-Tk.",
+    "ano_versao_relevante": 2015,
+    "link": "https://github.com/Ecogenomics/CheckM",
+    "categorias": [
+      "Controle de qualidade",
+      "Genômica"
+    ]
+  },
+  {
+    "nome": "GTDB-Tk",
+    "descricao": "GTDB-Tk é um kit de ferramentas para atribuir classificações taxonômicas a genomas bacterianos e arqueanos com base no Genome Taxonomy Database (GTDB), usando uma abordagem filogenética. É do mesmo grupo de pesquisa que desenvolveu o CheckM.",
+    "ano_versao_relevante": 2018,
+    "link": "https://github.com/Ecogenomics/gtdbtk",
+    "categorias": [
+      "Classificação taxonômica",
+      "Genômica"
+    ]
+  },
+  {
+    "nome": "Kaiju",
+    "descricao": "Kaiju é um programa para classificação taxonômica rápida e sensível de leituras de sequenciamento de alto rendimento, utilizando um banco de dados de referência de proteínas para encontrar a melhor correspondência.",
+    "ano_versao_relevante": 2016,
+    "link": "https://github.com/bioinformatics-centre/kaiju",
+    "categorias": [
+      "Classificação taxonômica",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "PICRUSt",
+    "descricao": "PICRUSt (Phylogenetic Investigation of Communities by Reconstruction of Unobserved States) é um software de bioinformática para prever o conteúdo funcional de metagenomas a partir de dados de genes marcadores (como o 16S rRNA) e genomas completos. A versão mais recente, PICRUSt2, oferece melhorias como um banco de dados de referência expandido e maior flexibilidade.",
+    "ano_versao_relevante": 2013,
+    "link": "https://github.com/picrust/picrust2",
+    "categorias": [
+      "Análise funcional",
+      "Análise de amplicon (16S/ITS)"
+    ]
+  },
+  {
+    "nome": "Anvi'o",
+    "descricao": "Anvi'o é uma plataforma de análise e visualização de dados genômicos, metagenômicos e pangenômicos. É uma ferramenta integrada que permite desde a análise de contigs até a visualização interativa de dados complexos, facilitando a exploração de genomas e metagenomas.",
+    "ano_versao_relevante": 2015,
+    "link": "https://github.com/meren/anvio",
+    "categorias": [
+      "Visualização de dados",
+      "Metagenômica",
+      "Genômica",
+      "Pangenômica"
+    ]
+  },
+  {
+    "nome": "PhyloSeq",
+    "descricao": "PhyloSeq é um pacote da linguagem R para a análise e visualização de dados de sequenciamento de microbioma. Ele permite importar, armazenar, analisar e visualizar dados filogenéticos de forma integrada com dados de abundância e metadados de amostras.",
+    "ano_versao_relevante": 2013,
+    "link": "https://bioconductor.org/packages/release/bioc/html/phyloseq.html",
+    "categorias": [
+      "Análise de amplicon (16S/ITS)",
+      "Visualização de dados",
+      "R"
+    ]
+  },
+  {
+    "nome": "Roary",
+    "descricao": "Roary é um pipeline de alta velocidade para análise de pangenomas. Ele identifica o core (genes presentes em todas as amostras) e o pangenoma (conjunto total de genes) de um conjunto de genomas procarióticos, sendo fundamental para estudos de genômica comparativa.",
+    "ano_versao_relevante": 2015,
+    "link": "https://sanger-pathogens.github.io/Roary/",
+    "categorias": [
+      "Pangenômica",
+      "Genômica comparativa",
+      "Genômica"
+    ]
+  },
+  {
+    "nome": "FastQC",
+    "descricao": "FastQC é uma ferramenta de controle de qualidade para dados brutos de sequenciamento de alto rendimento. Gera relatórios concisos sobre a qualidade das leituras, permitindo diagnosticar problemas antes de prosseguir com a análise. É frequentemente usado em conjunto com ferramentas de trimming como o Fastp.",
+    "ano_versao_relevante": 2010,
+    "link": "https://www.bioinformatics.babraham.ac.uk/projects/fastqc/",
+    "categorias": [
+      "Controle de qualidade",
+      "Genômica",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "Fastp",
+    "descricao": "Fastp é uma ferramenta ultrarrápida e completa para pré-processamento de dados de sequenciamento (FASTQ). Realiza controle de qualidade, remoção de adaptadores, filtragem por qualidade e correção de leituras, tudo em uma única etapa. É uma alternativa popular a ferramentas como Trimmomatic.",
+    "ano_versao_relevante": 2018,
+    "link": "https://github.com/OpenGene/fastp",
+    "categorias": [
+      "Controle de qualidade",
+      "Genômica",
+      "Metagenômica"
+    ]
+  },
+  {
+    "nome": "SqueezeMeta",
+    "descricao": "SqueezeMeta é um pipeline automatizado e completo para análise de metagenomas e metatranscriptomas. Ele integra diversas etapas, desde a montagem e classificação taxonômica até a reconstrução de genomas (MAGs) e anotação funcional, simplificando análises complexas em um único comando.",
+    "ano_versao_relevante": 2019,
+    "link": "https://github.com/jtamames/SqueezeMeta",
+    "categorias": [
+      "Metagenômica",
+      "Montagem de genomas",
+      "Classificação taxonômica",
+      "Análise funcional"
+    ]
+  },
+  {
+    "nome": "BWA",
+    "descricao": "Burrows-Wheeler Aligner é um pacote de software para mapear sequências curtas de leitura para um genoma de referência.",
+    "ano_versao_relevante": "2013",
+    "link": "http://bio-bwa.sourceforge.net/",
+    "categorias": [
+      "Alinhamento de sequências",
+      "Genômica",
+      "Variantes",
+      "Mapeamento de leituras"
+    ]
+  },
+  {
+    "nome": "GATK",
+    "descricao": "Genome Analysis Toolkit, um conjunto de ferramentas para análise de genomas, especialmente para call de variantes e genotipagem.",
+    "ano_versao_relevante": "2023",
+    "link": "https://gatk.broadinstitute.org/",
+    "categorias": [
+      "Call de variantes",
+      "Genômica",
+      "Sequenciamento",
+      "SNPs"
+    ]
+  },
+  {
+    "nome": "SAMtools",
+    "descricao": "Conjunto de utilitários para manipular alinhamentos de sequências no formato SAM/BAM/CRAM.",
+    "ano_versao_relevante": "2022",
+    "link": "http://www.htslib.org/",
+    "categorias": [
+      "Manipulação de sequências",
+      "Genômica",
+      "Estrutura de dados",
+      "Utilitário de linha de comando"
+    ]
+  },
+  {
+    "nome": "Trinity",
+    "descricao": "Software de montagem de novo para dados de sequenciamento de RNA-seq, visando a construção de transcritos completos.",
+    "ano_versao_relevante": "2017",
+    "link": "https://github.com/trinityrnaseq/trinityrnaseq",
+    "categorias": [
+      "Transcriptômica",
+      "Assembly",
+      "RNA-seq",
+      "De novo"
+    ]
+  },
+  {
+    "nome": "Hisat2",
+    "descricao": "Ferramenta de alinhamento de sequências rápida e sensível para dados de RNA-seq, utilizando índices baseados em gráficos.",
+    "ano_versao_relevante": "2019",
+    "link": "http://daehwankim.github.io/hisat2/",
+    "categorias": [
+      "RNA-seq",
+      "Alinhamento de sequências",
+      "Transcriptômica",
+      "Expressão gênica"
+    ]
+  },
+  {
+    "nome": "Snakemake",
+    "descricao": "Sistema de gerenciamento de workflow que ajuda a criar pipelines de análise de dados portáteis e escaláveis.",
+    "ano_versao_relevante": "2023",
+    "link": "https://snakemake.github.io/",
+    "categorias": [
+      "Workflow",
+      "Gerenciamento de pipelines",
+      "Automação",
+      "Python",
+      "Reprodutibilidade"
+    ]
+  },
+  {
+    "nome": "Conda",
+    "descricao": "Sistema de gerenciamento de pacotes e ambientes amplamente utilizado em bioinformática para lidar com dependências de software.",
+    "ano_versao_relevante": "2023",
+    "link": "https://docs.conda.io/",
+    "categorias": [
+      "Infraestrutura",
+      "Gerenciamento de pacotes",
+      "Ambiente",
+      "Reprodutibilidade"
+    ]
+  },
+  {
+    "nome": "MAFFT",
+    "descricao": "Multiple Alignment using Fast Fourier Transform é uma ferramenta popular para alinhamento múltiplo de sequências (MSA).",
+    "ano_versao_relevante": "2021",
+    "link": "https://mafft.cbrc.jp/alignment/software/",
+    "categorias": [
+      "Alinhamento múltiplo",
+      "Filogenética",
+      "Proteômica",
+      "Sequências de DNA/Proteínas"
+    ]
+  },
+  {
+    "nome": "PAML",
+    "descricao": "Pacote de software para análise filogenética usando métodos de máxima verossimilhança, frequentemente aplicado a taxas de substituição (dN/dS).",
+    "ano_versao_relevante": "2009",
+    "link": "http://abacus.gene.ucl.ac.uk/software/paml.html",
+    "categorias": [
+      "Filogenética",
+      "Evolução molecular",
+      "Modelos de substituição",
+      "Máxima Verossimilhança"
+    ]
+  },
+  {
+    "nome": "Seurat",
+    "descricao": "Pacote R para análise, controle de qualidade e exploração de dados de sequenciamento de RNA de célula única (scRNA-seq).",
+    "ano_versao_relevante": "2023",
+    "link": "https://satijalab.org/seurat/",
+    "categorias": [
+      "Single-cell",
+      "RNA-seq",
+      "R",
+      "Visualização de dados",
+      "Transcriptômica"
+    ]
+  },
+  {
+    "nome": "AlphaFold2",
+    "descricao": "Sistema de inteligência artificial desenvolvido pela DeepMind para prever com precisão estruturas de proteínas a partir de sequências de aminoácidos.",
+    "ano_versao_relevante": "2021",
+    "link": "https://deepmind.com/research/highlighted-research/alphafold",
+    "categorias": [
+      "Predição de estrutura",
+      "Proteômica",
+      "Deep Learning",
+      "Modelagem molecular"
+    ]
+  },
+  {
+    "nome": "IGV",
+    "descricao": "Integrative Genomics Viewer, uma ferramenta de visualização de alto desempenho para explorar grandes conjuntos de dados genômicos.",
+    "ano_versao_relevante": "2023",
+    "link": "https://software.broadinstitute.org/software/igv/",
+    "categorias": [
+      "Visualização de dados",
+      "Genômica",
+      "Alinhamentos",
+      "SNPs",
+      "Estrutura"
+    ]
+  },
+  {
+    "nome": "STAR",
+    "descricao": "Spliced Transcripts Alignment to a Reference, um mapeador de RNA-seq ultrarrápido para genomas longos e complexos.",
+    "ano_versao_relevante": "2020",
+    "link": "https://github.com/alexdobin/STAR",
+    "categorias": [
+      "RNA-seq",
+      "Alinhamento de sequências",
+      "Transcriptômica",
+      "Mapeamento de leituras"
+    ]
+  },
+  {
+    "nome": "DESeq2",
+    "descricao": "Pacote R para a análise de dados de sequenciamento de alto rendimento, como RNA-seq, para determinar a expressão gênica diferencial.",
+    "ano_versao_relevante": "2023",
+    "link": "https://bioconductor.org/packages/release/bioc/html/DESeq2.html",
+    "categorias": [
+      "Expressão diferencial",
+      "RNA-seq",
+      "R",
+      "Bioconductor",
+      "Estatística"
+    ]
+  },
+  {
+    "nome": "BUSCO",
+    "descricao": "Avalia a completude de genomas, genomas de montagens de novo ou transcritomas usando conjuntos de genes de cópia única altamente conservados.",
+    "ano_versao_relevante": "2022",
+    "link": "https://busco.ezlab.org/",
+    "categorias": [
+      "Avaliação de genomas",
+      "Qualidade",
+      "Assembly",
+      "Genômica comparativa"
+    ]
+  },
+  {
+    "nome": "Minimap2",
+    "descricao": "Alinhador/mapeador rápido e versátil para long-reads (PacBio, Nanopore) e genomas grandes.",
+    "ano_versao_relevante": "2023",
+    "link": "https://github.com/lh3/minimap2",
+    "categorias": [
+      "Long-reads",
+      "Alinhamento de sequências",
+      "Nanopore",
+      "Genômica"
+    ]
+  },
+  {
+    "nome": "Prokka",
+    "descricao": "Ferramenta rápida para anotação de genomas bacterianos, virais e de organelas em menos de 5 minutos.",
+    "ano_versao_relevante": "2023",
+    "link": "https://github.com/tseemann/prokka",
+    "categorias": [
+      "Anotação genômica",
+      "Genômica",
+      "Bacteriana",
+      "Pipeline"
+    ]
+  },
+  {
+    "nome": "BEAST",
+    "descricao": "Bayesian Evolutionary Analysis Sampling Trees, um pacote de software para inferência de filogenias usando métodos MCMC (Monte Carlo via Cadeias de Markov).",
+    "ano_versao_relevante": "2020",
+    "link": "https://www.beast2.org/",
+    "categorias": [
+      "Filogenética",
+      "Análise bayesiana",
+      "Evolução",
+      "Relógio molecular"
+    ]
+  },
+  {
+    "nome": "Circos",
+    "descricao": "Software de visualização para mapeamento de dados e relacionamentos em um layout circular.",
+    "ano_versao_relevante": "2019",
+    "link": "http://circos.ca/",
+    "categorias": [
+      "Visualização de dados",
+      "Genômica comparativa",
+      "Estrutura genômica",
+      "Mapeamento"
+    ]
+  },
+  {
+    "nome": "MUSCLE",
+    "descricao": "Multiple Sequence Comparison by Log-Expectation, um dos programas mais precisos para alinhamento múltiplo de sequências (MSA).",
+    "ano_versao_relevante": "2015",
+    "link": "https://www.drive5.com/muscle/",
+    "categorias": [
+      "Alinhamento múltiplo",
+      "Proteínas",
+      "DNA",
+      "Filogenética"
+    ]
+  },
+  {
+    "nome": "VMD",
+    "descricao": "Visual Molecular Dynamics, um programa de computador para visualização e análise de simulações de dinâmica molecular.",
+    "ano_versao_relevante": "2022",
+    "link": "https://www.ks.uiuc.edu/Research/vmd/",
+    "categorias": [
+      "Visualização molecular",
+      "Dinâmica molecular",
+      "Estrutura",
+      "Proteômica"
+    ]
+  },
+  {
+    "nome": "EdgeR",
+    "descricao": "Pacote Bioconductor/R para análise de expressão diferencial de dados de RNA-seq, com foco em dados de contagens.",
+    "ano_versao_relevante": "2023",
+    "link": "https://bioconductor.org/packages/release/bioc/html/edgeR.html",
+    "categorias": [
+      "Expressão diferencial",
+      "R",
+      "RNA-seq",
+      "Estatística"
+    ]
+  },
+  {
+    "nome": "COBRApy",
+    "descricao": "Biblioteca Python para modelagem de Biologia de Sistemas, permitindo reconstrução, simulação e análise de redes metabólicas (COBRA).",
+    "ano_versao_relevante": "2023",
+    "link": "https://cobrapy.readthedocs.io/",
+    "categorias": [
+      "Modelagem metabólica",
+      "Biologia de sistemas",
+      "Python",
+      "Análise de redes"
+    ]
+  },
+  {
+    "nome": "Iroki",
+    "descricao": "Ferramenta de visualização baseada na web para árvores filogenéticas e metadados associados, ideal para análise comparativa.",
+    "ano_versao_relevante": "2018",
+    "link": "https://edvancer.github.io/iroki/",
+    "categorias": [
+      "Visualização de dados",
+      "Árvores filogenéticas",
+      "Filogenética",
+      "Metadados",
+      "Genômica comparativa"
+    ]
+  },
+  {
+    "nome": "HMMER",
+    "descricao": "Pacote de software para pesquisa de sequências de banco de dados usando Modelos Ocultos de Markov (HMMs).",
+    "ano_versao_relevante": "2023",
+    "link": "http://hmmer.org/",
+    "categorias": [
+      "Busca de domínios",
+      "Análise de sequências",
+      "Modelos HMM",
+      "Proteômica",
+      "Genômica"
+    ]
+  }
+]

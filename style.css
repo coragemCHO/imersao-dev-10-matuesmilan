@@ -1,0 +1,600 @@
+/* Importa a fonte 'Roboto' do Google Fonts para ser usada no projeto. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); /* Importa a fonte Roboto */
+
+* {
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos no tamanho total do elemento */
+}
+
+/* Define variáveis de cores para o tema claro (padrão). Isso facilita a manutenção e a criação de temas. */
+:root {
+    /* Paleta de cores profissional inspirada em bioinformática */
+    --primary-color: #007A7A; /* Um verde-azulado (teal) forte para destaques e links */
+    --secondary-color: #2c3e50; /* Um cinza-azulado escuro para texto principal */
+    --tertiary-color: #7f8c8d; /* Um cinza mais claro para texto secundário */
+    --bg-color: #f8f9fa; /* Um fundo branco-acinzentado muito claro */
+    --border-color: #dee2e6; /* Cor para bordas sutis */
+    --card-bg-color: #ffffff; /* Fundo branco para os cards */
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --toggle-bg: #2c3e50;
+    --toggle-fg: #f8f9fa;
+}
+
+/* Sobrescreve as variáveis de cores quando o body tem a classe 'dark-mode'. */
+body.dark-mode {
+    --primary-color: #48D1CC; /* Um teal mais brilhante para fundos escuros */
+    --secondary-color: #ecf0f1; /* Cinza claro para texto principal */
+    --tertiary-color: #95a5a6; /* Cinza médio para texto secundário */
+    --bg-color: #212529; /* Fundo quase preto */
+    --border-color: #495057; /* Bordas mais claras */
+    --card-bg-color: #343a40; /* Fundo dos cards cinza escuro */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos base para o corpo da página. */
+body {
+    margin: 0; /* Remove a margem padrão do body */
+    background: var(--bg-color); /* Aplica a cor de fundo definida na variável --bg-color */
+    color: var(--secondary-color); /* Aplica a cor de texto padrão */
+    font-family: "Roboto", sans-serif; /* Define a nova família da fonte */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para as cores ao trocar de tema. */
+}
+
+header {
+    padding: 2rem 1rem; /* Define o espaçamento interno (2rem em cima/baixo, 1rem nos lados) */
+    display: flex; /* Habilita o layout flexbox */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* Espaço entre os itens */
+    position: sticky; /* Mantém o cabeçalho fixo no topo ao rolar a página */
+    top: 0; /* Define a posição do cabeçalho no topo da viewport quando ele se torna "sticky" */
+    background: var(--card-bg-color); /* Fundo branco para o header */
+    z-index: 100; /* Garante que o cabeçalho fique acima de outros elementos da página */
+    box-shadow: 0 2px 4px var(--shadow-color); /* Sombra sutil para destacar o header */
+    gap: 1rem; /* Define um espaçamento de 1rem entre os elementos filhos do flex container */
+    padding: 1rem 2rem;
+}
+
+/* Estilo para o título principal no cabeçalho. */
+header h1 {
+    font-size: 1.5rem; /* Define o tamanho da fonte */
+    margin: 0; /* Remove a margem padrão do h1 */
+    font-weight: 700; /* Fonte mais forte para o título */
+    white-space: nowrap; /* Impede que o texto do título quebre em várias linhas */
+    color: var(--primary-color);
+}
+
+/* Estilo para o link do logo no cabeçalho */
+#logo-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Herda a cor do elemento pai (h1) */
+}
+
+/* Estilo para o campo de busca. */
+.search-container input {
+    padding: 0.375rem 0.75rem; /* Define o espaçamento interno do campo de texto */
+    border-radius: 8px; /* Bordas menos arredondadas, mais profissionais */
+    border: 1px solid var(--border-color); /* Define a cor e espessura da borda */
+    background: var(--card-bg-color); /* Define a cor de fundo */
+    font-family: inherit; /* Herda a família da fonte do elemento pai */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    transition: all 0.2s ease; /* Adiciona uma transição suave para todas as propriedades ao mudar de estado */
+    width: 30rem; /* Define a largura do campo de texto */
+    color: var(--secondary-color); /* Define a cor do texto que será digitado */
+    margin-right: .5rem; /* Adiciona uma margem à direita do campo de texto */
+}
+
+/* Estilo para o texto de placeholder do campo de busca. */
+.search-container input::placeholder {
+    font-size: 1rem; /* Define o tamanho da fonte para o texto do placeholder */
+    font-weight: 300; /* Define o peso da fonte para o texto do placeholder */
+    color: var(--tertiary-color); /* Define a cor do texto do placeholder */
+}
+
+/* Estilo para o campo de busca quando está em foco (selecionado). */
+.search-container input:focus {
+    outline: none; /* Remove a borda de foco padrão do navegador */
+    border-color: var(--primary-color); /* Muda a cor da borda quando o input está em foco */
+    box-shadow: 0 0 0 0.2rem rgba(0, 122, 122, 0.25); /* Sombra sutil na cor primária */
+}
+
+/* Estilo para o botão de busca. */
+#botao-busca {
+    padding: 0.45rem 1.5rem; /* Ajuste no padding do botão */
+    border-radius: 8px; /* Mesma borda do input */
+    border: none; /* Remove a borda padrão do botão */
+    cursor: pointer; /* Muda o cursor para uma "mãozinha" ao passar o mouse sobre o botão */
+    font-family: inherit; /* Herda a família da fonte */
+    font-weight: 700; /* Define o peso da fonte */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    white-space: nowrap; /* Impede que o texto do botão quebre em várias linhas */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Adiciona uma transição suave para as cores de fundo e de texto */
+    background-color: var(--primary-color); /* Cor primária como fundo */
+    color: var(--card-bg-color); /* Texto branco */
+}
+
+/* Efeito ao passar o mouse sobre o botão de busca. */
+#botao-busca:hover {
+    background-color: #005f5f; /* Tom mais escuro da cor primária no hover */
+}
+
+/* Efeito ao clicar no botão de busca. */
+#botao-busca:active {
+    transform: scale(0.98); /* Cria um efeito de "pressionar" diminuindo o tamanho do botão ao ser clicado */
+}
+
+/* Estilo para o botão de alternar modo escuro. */
+#dark-mode-toggle {
+    background: var(--toggle-bg);
+    color: var(--toggle-fg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container para os botões do cabeçalho (guia e modo escuro). */
+.header-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Estilo para a área de conteúdo principal. */
+main {
+    max-width: 80rem; /* Define a largura máxima para o conteúdo principal */
+    margin: 0 auto; /* Centraliza o conteúdo principal na página horizontalmente */
+    padding: 2rem 1rem;
+}
+
+/* Estilo base para os cards de ferramentas. */
+article {
+    background: var(--card-bg-color); /* Fundo branco para os cards */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 1.5rem; /* Espaçamento interno */
+    margin-bottom: 1.25rem; /* Adiciona uma margem na parte inferior do artigo */
+    box-shadow: 0 4px 6px var(--shadow-color); /* Sombra sutil para efeito de elevação */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transição suave */
+    border: 1px solid var(--border-color); /* Borda sutil */
+    opacity: 0; /* Começa invisível para a animação */
+    animation: fadeInUp 0.5s ease forwards; /* Aplica a animação de entrada. */
+}
+
+
+
+article:hover {
+    transform: translateY(-5px); /* Efeito de levantar o card */
+    box-shadow: 0 8px 12px var(--shadow-color); /* Sombra mais pronunciada no hover */
+}
+
+/* Estilo para o título dentro de um card. */
+article h2 {
+    margin-top: 0; /* Remove a margem do topo do título */
+    font-weight: 700; /* Define o peso da fonte como semi-negrito */
+    font-size: 1.6rem; /* Define o tamanho da fonte */
+    margin-bottom: 0.25rem; /* Adiciona uma pequena margem inferior */
+    color: var(--primary-color); /* Define a cor do texto do título */
+}
+
+/* Estilo para os parágrafos dentro de um card. */
+article p {
+    margin: 0.5rem 0; /* Define as margens verticais do parágrafo */
+    line-height: 1.7; /* Aumenta o espaçamento entre as linhas para melhor legibilidade */
+    font-size: 1rem; /* Define o tamanho da fonte */
+    margin-bottom: 0.5rem; /* Adiciona uma margem inferior */
+    color: var(--secondary-color); /* Cor de texto principal */
+}
+
+/* Estilo para o texto em negrito (strong) dentro de um parágrafo de um card. */
+article p strong {
+    color: var(--tertiary-color); /* Define a cor para o texto em negrito dentro de um parágrafo */
+    font-weight: 500; /* Define o peso da fonte como normal */
+}
+
+/* Estilo para os links dentro de um card. */
+article a {
+    color: var(--primary-color); /* Define a cor do link */
+    text-decoration: underline; /* Mantém o sublinhado para clareza */
+    font-weight: 500; /* Peso da fonte */
+}
+
+/* Efeito ao passar o mouse sobre um link. */
+article a:hover {
+    color: #005f5f; /* Escurece o link no hover */
+}
+
+/* Container para as tags de categoria. */
+.categorias-container {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--tertiary-color);
+}
+
+/* Estilo para cada tag de categoria individual. */
+.categoria-tag {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 0.25rem 0.6rem;
+    border-radius: 15px;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+}
+
+/* Efeito ao passar o mouse sobre uma tag de categoria, indicando que é clicável. */
+.categoria-tag:hover {
+    cursor: pointer;
+    background-color: var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+/* Estilo para o link "Saiba mais". */
+.saiba-mais-link {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+
+/* --- Estilos do Rodapé --- */
+.footer {
+    position: relative; /* Posição relativa para o fluxo normal do documento */
+    color: var(--tertiary-color); /* Define a cor do texto */
+    background-color: var(--bg-color); /* Define a cor de fundo */
+    padding: 15px 20px; /* Define o espaçamento interno */
+    border-top: 1px solid var(--border-color); /* Adiciona uma linha de borda no topo */
+    font-size: 0.8rem; /* Define o tamanho da fonte */
+}
+
+/* Estilos para a lista de links no rodapé. */
+.footer-links {
+    list-style: none; /* Remove os marcadores de item (bolinhas) da lista */
+    display: flex; /* Habilita o layout flexbox */
+    flex-wrap: wrap; /* Permite que os itens da lista quebrem para a próxima linha se não houver espaço */
+    justify-content: center; /* Centraliza os links horizontalmente no rodapé */
+    gap: 15px; /* Define um espaçamento de 15px entre os links */
+}
+
+/* Estilos para os links do rodapé. */
+.footer-links a {
+    color: var(--tertiary-color); /* Define a cor do link */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.2s; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+/* Efeito ao passar o mouse sobre os links do rodapé. */
+.footer-links a:hover {
+    color: var(--primary-color); /* Muda a cor do link ao passar o mouse */
+}
+
+
+/* --- Media Queries para Responsividade --- */
+/* Para telas menores, como tablets. */
+@media (max-width: 768px) {
+    header { /* Estilos para telas com largura máxima de 768px */
+        flex-direction: column; /* Organiza os itens do cabeçalho em coluna */
+        padding: 1rem; /* Reduz o espaçamento interno */
+    }
+
+    header h1 { /* Estilos para o h1 no cabeçalho em telas menores */
+        text-align: center; /* Centraliza o texto do título */
+        margin-bottom: 1rem; /* Adiciona uma margem inferior para separar do campo de busca */
+    }
+
+    .search-container input { /* Estilos para o input em telas menores */
+        width: 100%; /* Define a largura como 90% da largura da tela (viewport width) */
+        font-size: 1.2rem; /* Reduz o tamanho da fonte para melhor ajuste */
+    }
+
+    main { /* Estilos para o main em telas menores */
+        padding: 0 1rem; /* Adiciona espaçamento lateral para não colar nas bordas da tela */
+    }
+
+    article:hover { /* Estilos para o article em telas menores */
+        transform: none;
+        box-shadow: 0 4px 6px var(--shadow-color);
+    }
+}
+
+/* Para telas ainda menores, como smartphones. */
+@media (max-width: 480px) {
+    header h1 { /* Estilos para o h1 em telas com largura máxima de 480px */
+        font-size: 1rem; /* Reduz ainda mais o tamanho da fonte do título */
+        max-width: 70%; /* Define uma largura máxima para o título */
+        word-wrap: break-word; /* Permite que palavras longas quebrem para a próxima linha */
+    }
+
+    .search-container input, /* Estilos para o input e seu placeholder em telas muito pequenas */
+    .search-container input::placeholder {
+        font-size: 1rem; /* Reduz o tamanho da fonte do input e do placeholder */
+    }
+
+    article h2 { /* Estilos para o h2 do article em telas muito pequenas */
+        font-size: 1.3rem; /* Reduz o tamanho da fonte do título do artigo */
+    }
+
+    .search-container { /* Estilos para a div do cabeçalho em telas muito pequenas */
+        display: flex; /* Habilita flexbox */
+        align-items: center; /* Alinha os itens (input e botão) verticalmente ao centro */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        flex-direction: column; /* Organiza os itens em coluna (um abaixo do outro) */
+        gap: 0.5rem; /* Define um espaçamento entre o input e o botão */
+    }
+
+    button { /* Estilos para o botão em telas muito pequenas */
+        margin-top: 1rem; /* Adiciona uma margem no topo do botão */
+    }
+}
+
+/* Animação de entrada para os cards. */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Estilos do Modal --- */
+/* Fundo escurecido que cobre a tela inteira quando o modal está aberto. */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Torna o modal visível. */
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilo para o conteúdo do modal, com animação de entrada. */
+.modal-overlay .analysis-guide {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin-bottom: 0;
+    transform: scale(0.95) translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .analysis-guide {
+    transform: scale(1) translateY(0);
+}
+
+/* Estilo geral para a caixa de conteúdo do guia de análise. */
+.analysis-guide {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Título dentro do modal. */
+.analysis-guide h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Subtítulos dentro do modal. */
+.analysis-guide h3 {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+/* Listas dentro do modal. */
+.analysis-guide ul {
+    padding-left: 20px;
+}
+
+/* Botão de fechar (X) do modal. */
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão de fechar. */
+.close-modal-btn:hover {
+    color: var(--primary-color);
+}
+
+/* Impede o scroll da página principal quando o modal está aberto. */
+body.modal-open {
+    overflow: hidden; /* Impede o scroll da página principal quando o modal está aberto */
+}
+
+
+/* --- Estilo do Botão "Voltar ao Topo" --- */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--card-bg-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Torna o botão visível. */
+#back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top-btn:hover {
+    background-color: #005f5f; /* Cor de hover do botão principal */
+}
+
+body.dark-mode #back-to-top-btn:hover {
+    background-color: #3aa9a3; /* Cor de hover mais clara para o dark mode */
+}
+
+
+/* --- Estilos da Mensagem de Boas-Vindas e Guia Interativo --- */
+.welcome-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: 1rem auto;
+    max-width: 60rem;
+}
+
+.welcome-message h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-message p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.welcome-message .call-to-action {
+    font-weight: 500;
+    color: var(--tertiary-color);
+    margin-top: 2rem;
+}
+
+/* Estilo para a seção do guia interativo "Não sabe por onde começar?". */
+.analysis-suggester {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.analysis-suggester h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Container para os controles de seleção (dropdowns). */
+.suggester-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Grupo de controle individual (label + select). */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 250px;
+}
+
+/* Rótulo (label) dos selects. */
+.control-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.control-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+/* Área onde o resultado da sugestão é exibido. */
+.suggestion-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    line-height: 1.7;
+}
+
+/* Título dentro da caixa de resultado. */
+.suggestion-result h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Links dentro da caixa de resultado. */
+.suggestion-result a {
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Botão "Mostrar Ferramentas do Fluxo" que aparece nas sugestões. */
+.show-tools-btn {
+    display: block;
+    margin: 1.5rem auto 0;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Efeito ao passar o mouse sobre o botão "Mostrar Ferramentas". */
+.show-tools-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--card-bg-color);
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadados básicos do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioHelper: Seu Guia de Ferramentas de Bioinformática</title>
+    <!-- Link para a folha de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho da página, fixo no topo -->
+    <header>
+        <h1><a href="." id="logo-link">BioHelper</a></h1>
+        <!-- Container para a barra de busca -->
+        <div class="search-container">
+            <input type="text" id="caixa-busca" placeholder="Digite uma ferramenta de bioinformática">
+            <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
+        </div>
+        <!-- Container para os botões de ação do cabeçalho -->
+        <div class="header-buttons">
+            <!-- Botão que abre o modal com o guia de análises -->
+            <button id="open-guide-btn" title="Guia de Análise Estatística">?</button>
+            <!-- Botão para alternar entre modo claro e escuro -->
+            <button id="dark-mode-toggle" title="Alternar modo escuro">🌙</button>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <!-- Seção com a mensagem de boas-vindas -->
+        <div class="welcome-message">
+            <h2>Bem-vindo ao BioHelper!</h2>
+            <p>A bioinformática é um campo fascinante que une biologia e ciência da computação para desvendar os segredos dos dados biológicos. Com tantas ferramentas disponíveis, sabemos que o início pode ser um desafio.</p>
+            <p>Esta página foi criada para ser o seu guia, apresentando um catálogo de ferramentas essenciais, explicando o que fazem e como elas se conectam. Explore, aprenda e acelere sua jornada na bioinformática!</p>
+            <p class="call-to-action">Comece digitando o nome de uma ferramenta na busca acima ou use nosso guia abaixo.</p>
+        </div>
+
+        <!-- Seção do guia interativo para sugerir fluxos de análise -->
+        <section id="analysis-suggester" class="analysis-suggester">
+            <h2>Não sabe por onde começar?</h2>
+            <p>Selecione seus dados e objetivos abaixo, e vamos sugerir um caminho para sua análise.</p>
+            <!-- Controles de seleção (dropdowns) para o guia -->
+            <div class="suggester-controls">
+                <div class="control-group">
+                    <label for="data-type">1. Qual o seu tipo de dado?</label>
+                    <select id="data-type">
+                        <option value="">Selecione...</option>
+                        <option value="amplicon">16S/ITS (Amplicon)</option>
+                        <option value="shotgun">Metagenoma (Shotgun)</option>
+                        <option value="genomes">Genomas de Isolados</option>
+                        <option value="rnaseq">Transcriptoma (RNA-seq)</option>
+                        <option value="variants">Análise de Variantes</option>
+                    </select>
+                </div>
+                <div id="goal-control-group" class="control-group" style="display: none;">
+                    <label for="analysis-goal">2. Qual o seu principal objetivo?</label>
+                    <select id="analysis-goal"></select>
+                </div>
+            </div>
+            <!-- Div onde o resultado da sugestão será exibido -->
+            <div id="suggestion-result" class="suggestion-result"></div>
+        </section>
+
+        <!-- Modal (janela pop-up) com o guia de análises estatísticas -->
+        <div id="guide-modal" class="modal-overlay">
+            <section class="analysis-guide">
+            <button class="close-modal-btn" title="Fechar">&times;</button>
+            <h2>Guias e Conceitos Fundamentais em Bioinformática</h2>
+            <p>A bioinformática moderna envolve uma série de fluxos de trabalho e conceitos estatísticos para extrair significado de dados biológicos complexos. Este guia resume algumas das análises mais importantes.</p>
+            
+            <h3>Linguagens Mais Utilizadas</h3>
+            <p>Embora as ferramentas de linha de comando sejam essenciais, a análise estatística e a visualização de dados são majoritariamente realizadas em ambientes de programação, principalmente:</p>
+            <ul>
+                <li><strong>R:</strong> Considerada a linguagem padrão para estatística em ecologia microbiana. Pacotes como <code>vegan</code>, <code>phyloseq</code>, e <code>DESeq2</code> são fundamentais para análises de diversidade e abundância diferencial.</li>
+                <li><strong>Python:</strong> Vem ganhando espaço com bibliotecas como <code>scikit-bio</code>, <code>pandas</code>, e <code>seaborn</code>. É especialmente forte na integração com pipelines de machine learning.</li>
+            </ul>
+
+            <h3>Verificando a Normalidade dos Dados</h3>
+            <p>Antes de comparar grupos (ex: diversidade alfa entre "saudável" e "doente"), é crucial verificar se os dados seguem uma distribuição normal. Isso define qual tipo de teste estatístico usar.</p>
+            <ul>
+                <li><strong>Testes de Normalidade:</strong> O <strong>Teste de Shapiro-Wilk</strong> é um dos mais utilizados para essa finalidade.</li>
+                <li><strong>Se os dados forem normais (paramétricos):</strong> Use testes como <strong>ANOVA</strong> (para 3+ grupos) ou <strong>Teste t de Student</strong> (para 2 grupos).</li>
+                <li><strong>Se os dados não forem normais (não-paramétricos):</strong> Use alternativas como o <strong>Teste de Kruskal-Wallis</strong> (para 3+ grupos) ou <strong>Teste de Mann-Whitney U</strong> (para 2 grupos).</li>
+            </ul>
+
+            <h3>Testes de Diversidade (Análise de Microbioma)</h3>
+            <ul>
+                <li><strong>Diversidade Alfa (α):</strong> Mede a riqueza (quantos táxons diferentes) e a uniformidade (quão equilibrada é a distribuição) de espécies dentro de <strong>uma única amostra</strong>. Índices comuns incluem Shannon, Simpson e Chao1. Testes estatísticos (como ANOVA ou Kruskal-Wallis) são usados para comparar a diversidade alfa entre grupos de amostras.</li>
+                <li><strong>Diversidade Beta (β):</strong> Compara a composição de espécies <strong>entre diferentes amostras</strong> para ver quão similares ou diferentes elas são. Índices comuns incluem <strong>Bray-Curtis</strong> (baseado em abundância), <strong>Jaccard</strong> (baseado em presença/ausência) e <strong>UniFrac</strong> (que considera a relação filogenética entre os microrganismos). A diferença entre os grupos é visualizada com gráficos de ordenação (PCoA, NMDS) e testada estatisticamente com testes como <strong>PERMANOVA</strong>.</li>
+            </ul>
+
+            <h3>Análise de Abundância/Expressão Diferencial</h3>
+            <p>Esta análise busca identificar quais "features" (sejam táxons em metagenômica ou genes em transcriptômica) estão significativamente mais ou menos abundantes ao comparar grupos. É crucial para encontrar biomarcadores. Ferramentas como <strong>DESeq2</strong> e <strong>edgeR</strong> são padrão para dados de contagem (RNA-seq, 16S).</p>
+
+            <h3>Análise de Expressão Gênica (RNA-seq)</h3>
+            <p>O fluxo de trabalho padrão para identificar genes diferencialmente expressos envolve: <strong>1. Controle de Qualidade</strong> (FastQC, Fastp), <strong>2. Mapeamento</strong> das leituras contra um genoma de referência (STAR, Hisat2), <strong>3. Contagem</strong> de leituras por gene, e <strong>4. Análise Estatística</strong> (DESeq2, edgeR).</p>
+
+            <h3>Análise de Variantes Genômicas</h3>
+            <p>Para encontrar SNPs e Indels, o fluxo geralmente é: <strong>1. Mapeamento</strong> das leituras contra um genoma (BWA, Minimap2), <strong>2. Processamento</strong> dos alinhamentos (SAMtools), <strong>3. Chamada de Variantes</strong> (GATK), e <strong>4. Visualização</strong> para validação (IGV).</p>
+
+            <h3>Filogenética Molecular</h3>
+            <p>Estuda a relação evolutiva entre sequências. Um passo central é o <strong>Alinhamento Múltiplo de Sequências</strong> (com ferramentas como <strong>MAFFT</strong> ou <strong>MUSCLE</strong>), seguido pela inferência da árvore filogenética usando métodos de máxima verossimilhança (ex: IQ-TREE) ou inferência Bayesiana (ex: <strong>BEAST</strong>).</p>
+
+            <h3>Reprodutibilidade e Gerenciamento de Workflows</h3>
+            <p>Garantir que suas análises sejam reprodutíveis é fundamental. Ferramentas como o <strong>Conda</strong> permitem criar ambientes de software isolados e consistentes. Para automatizar pipelines complexos, sistemas de gerenciamento de workflow como o <strong>Snakemake</strong> são essenciais, definindo cada passo da análise de forma explícita e escalável.</p>
+
+            <h3>Passos Fundamentais na Análise</h3>
+            <ol>
+                <li><strong>Controle de Qualidade (QC):</strong> O primeiro passo em qualquer análise. Ferramentas como <strong>FastQC</strong> (para visualizar a qualidade das leituras) e <strong>Fastp</strong> (para filtrar e aparar) são essenciais. Para genomas montados, use <strong>CheckM</strong> ou <strong>BUSCO</strong> para avaliar a completude.</li>
+                <li><strong>Classificação Taxonômica:</strong> Para saber "quem está lá". Ferramentas como <strong>Kraken2</strong>, <strong>MetaPhlAn</strong> (para metagenomas) ou <strong>QIIME 2</strong> e <strong>Mothur</strong> (para dados de amplicon) são usadas aqui.</li>
+                <li><strong>Anotação Genômica:</strong> Para genomas de isolados, use <strong>Prokka</strong> para uma anotação rápida e padronizada de genes e suas funções.</li>
+                <li><strong>Análise Funcional:</strong> Para entender "o que eles estão fazendo". Ferramentas como <strong>HUMAnN</strong> (para metagenomas) ou <strong>PICRUSt2</strong> (para amplicons) predizem os perfis funcionais da comunidade.</li>
+            </ol>
+        </section>
+        </div>
+
+        <!-- Container onde os cards das ferramentas serão renderizados pelo JavaScript -->
+        <section class="card-container">
+            <!-- O conteúdo será carregado aqui via JavaScript -->
+        </section>
+    </main>
+
+    <!-- Rodapé da página com links úteis -->
+    <footer class="footer">
+        <ul class="footer-links">
+            <li>
+                <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer">NCBI</a>
+            </li>
+            <li>
+                <a href="https://www.biostars.org/" target="_blank" rel="noopener noreferrer">BioStars</a>
+            </li>
+            <li>
+                <a href="https://www.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">EMBL-EBI</a>
+            </li>
+            <li>
+                <a href="https://usegalaxy.org/" target="_blank" rel="noopener noreferrer">Galaxy Project</a>
+            </li>
+            <li>
+                <a href="https://biopython.org/" target="_blank" rel="noopener noreferrer">Biopython</a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Botão "Voltar ao Topo", que aparece durante a rolagem -->
+    <button id="back-to-top-btn" title="Voltar ao topo">↑</button>
+
+    <!-- Link para o arquivo JavaScript principal -->
+    <script src="script.js"></script>
+</body>
+</html>
